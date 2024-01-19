@@ -1,0 +1,171 @@
+@import '@styles/themes.scss';
+
+@mixin themed($property, $key, $themes: $themes, $hover: user-select) {
+
+	@each $theme,
+	$colors in $themes {
+
+		&.#{$theme}-theme,
+		.#{$theme}-theme & {
+			#{$property}: map-get($colors, $key);
+
+			&:hover {
+				#{$hover}: map-get($colors, $key);
+			}
+		}
+
+	}
+}
+
+.hover {
+	&-primary {
+		@include themed('color', 'hover-text-primary', $themes, 'color');
+	}
+
+	&-secondary {
+		@include themed('color', 'hover-text-secondary', $themes, 'color');
+	}
+
+	&-bg-primary {
+		@include themed('background', 'hover-bg-primary', $themes, 'background');
+	}
+
+	&-bg-secondary {
+		@include themed('background', 'hover-bg-secondary', $themes, 'background');
+	}
+
+	&-text-blue-accent {
+		@include themed('color', 'hover-text-blue-accent', $themes, 'color');
+	}
+
+	&-accent {
+		@include themed('color', 'hover-accent', $themes, 'color');
+	}
+
+	&-bg-blue-accent {
+		@include themed('background', 'hover-bg-blue-accent', $themes, 'background');
+	}
+
+	&-bg-accent {
+		@include themed('background', 'hover-accent', $themes, 'background');
+	}
+
+	&-shadow {
+		@include themed('box-shadow', 'hover-shadow', $themes, 'box-shadow');
+	}
+
+	&-scale {
+		@include themed('transform', 'hover-scale', $themes, 'transform');
+	}
+
+	&-border-primary {
+		@include themed('border-color', 'hover-border-primary', $themes, 'border-color');
+	}
+
+	&-border-secondary {
+		@include themed('border-color', 'hover-border-secondary', $themes, 'border-color');
+	}
+
+	&-border-blue-accent {
+		@include themed('border-color', 'hover-border-blue-accent', $themes, 'border-color');
+	}
+
+	&-border-accent {
+		@include themed('border-color', 'hover-border-accent', $themes, 'border-color');
+	}
+}
+
+.bg {
+	&-primary {
+		@include themed('background', 'bg-primary');
+	}
+
+	&-toned-down {
+		@include themed('background', 'bg-toned-down');
+	}
+
+	&-secondary-toned-down {
+		@include themed('background', 'bg-secondary-toned-down');
+	}
+
+	&-high-contrast {
+		@include themed('background', 'bg-high-contrast');
+	}
+
+	&-deso-blue {
+		@include themed('background', 'bg-deso-blue');
+	}
+
+	&-med-contrast {
+		@include themed('background', 'bg-med-contrast');
+	}
+
+	&-secondary {
+		@include themed('background', 'bg-secondary');
+	}
+
+	&-accent {
+		@include themed('background', 'bg-accent');
+	}
+
+	&-modal {
+		@include themed('background', 'bg-modal');
+	}
+
+	&-gradient {
+		@include themed('background', 'bg-gradient');
+	}
+
+	&-linear-gradient {
+		@include themed('background', 'bg-linear-gradient');
+	}
+
+	&-linear-gradient-error {
+		@include themed('background', 'bg-linear-gradient-error');
+	}
+}
+
+.border {
+	&-primary {
+		@include themed('border-color', 'border-primary');
+	}
+}
+
+.text {
+
+	&-high-contrast {
+		@include themed('color', 'text-high-contrast');
+	}
+
+	&-primary {
+		@include themed('color', 'text-primary');
+	}
+
+	&-secondary {
+		@include themed('color', 'text-secondary');
+	}
+
+	&-toned-down {
+		@include themed('color', 'text-toned-down');
+	}
+
+	&-accent {
+		@include themed('color', 'text-accent');
+	}
+
+	&-modal {
+		@include themed('color', 'text-modal');
+	}
+
+	&-tertiary {
+		@include themed('color', 'text-tertiary');
+	}
+
+	&-decor {
+		@include themed('color', 'text-decor');
+	}
+
+	&-theme-color {
+		@include themed('color', 'text-theme-color');
+	}
+}

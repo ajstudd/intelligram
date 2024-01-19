@@ -1,0 +1,94 @@
+@import '@styles/themed.scss';
+@import '@styles/reset.scss';
+@import '@styles/global.scss';
+
+* {
+    /* For Firefox */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* For Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* For IE11 */
+input[type="number"]::-ms-clear {
+  display: none;
+}
+}
+
+body {
+    margin: 0px !important;
+    padding: 0px !important;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.text {
+    &_left {
+        text-align: left;
+    }
+
+    &_right {
+        text-align: right;
+    }
+
+    &_center {
+        text-align: center;
+    }
+}
+
+.disabled {
+    &:hover {
+        cursor: not-allowed;
+    }
+}
+
+.cursor-hover {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.cursor_not_allowed {
+    cursor: not-allowed;
+}
+
+.rounded {
+    border-radius: 4px;
+
+    &_md {
+        border-radius: 6px;
+    }
+
+    &_lg {
+        border-radius: 8px;
+    }
+
+    &_xl {
+        border-radius: 12px;
+    }
+
+    &_2xl {
+        border-radius: 16px;
+    }
+
+    &_3xl {
+        border-radius: 18px;
+    }
+
+    &_full {
+        border-radius: 50%;
+    }
+}
+
+input, textarea {
+    font-family: $font-Montserrat !important;
+
+    &::placeholder {
+        font-family: $font-Montserrat !important;
+    }
+}

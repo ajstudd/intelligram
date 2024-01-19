@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'SF Pro Display Regular';
+    src: url('../assets/fonts/SFPRODISPLAYREGULAR.OTF');
+}
+
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$font-Sf: 'SF Pro Display Regular', sans-serif;
+$font-Montserrat: 'Montserrat', sans-serif;
+$intelligram-radial-gradient-text: radial-gradient(254% 101% at 20% 42%, #02c2ff 0%, #000f57 100%);
+$intelligram-radial-gradient: linear-gradient(to bottom right,
+        hsla(194, 100%, 50%, 1),
+        hsla(204, 88%, 18%, 1),
+        hsla(204, 88%, 18%, 1),
+        hsla(194, 100%, 50%, 1));
+$intelligram-linear-gradient: linear-gradient(91.55deg, #00c0fe -2.65%, #256cfe 110.7%);
+$intelligram-linear-gradient-error: linear-gradient(91.55deg, #ff6262 -2.65%, #fe2525 110.7%);
+
+$intelligram-radial-gradient-dark: radial-gradient(254% 101% at 20% 42%, #02c2ff33 0%, #00c0fe26 100%);
+$intelligram-linear-gradient-dark: linear-gradient(91.55deg, #00c0fe26 -2.65%, #256cfe26 110.7%);
+
+@mixin scroller($width: 4px, $height: 6px, $color: var(--ui-border-color)) {
+    &::-webkit-scrollbar {
+        width: $width;
+        height: $height;
+    }
+
+    @include _scrollerThumb($color);
+}
+
+@mixin _scrollerThumb($color) {
+    &::-webkit-scrollbar-thumb {
+        background-color: $color;
+        border-radius: 4px;
+    }
+}
+
+@mixin flex-container($direction: row,
+    $justify: center,
+    $align: center,
+    $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
